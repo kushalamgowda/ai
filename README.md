@@ -5,17 +5,17 @@ A lightweight, intent-driven conversational AI agent built using **LangGraph**, 
 
 ---
 
-## 📌 Features
+## Features
 
-* ✅ Intent detection (Greeting, Product Inquiry, High Intent)
-* 🔀 LangGraph-based agent flow
-* 📚 RAG using FAISS vector store
-* 🧠 OpenAI-powered LLM (pluggable / mockable)
-* 🧪 CLI-based interactive chat
+* Intent detection (Greeting, Product Inquiry, High Intent)
+* LangGraph-based agent flow
+* RAG using FAISS vector store
+* OpenAI-powered LLM (pluggable / mockable)
+* CLI-based interactive chat
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ````
 User Input
@@ -42,24 +42,24 @@ LangGraph Router
 ````
 
 ai/
-│── main.py
+│
+├── main.py                  # Entry point
+├── requirements.txt
 │
 ├── agent/
-│   ├── graph.py      # LangGraph flow
-│   ├── intent.py     # Intent detection
-│   ├── rag.py        # RAG pipeline
+│   ├── graph.py              # LangGraph workflow
+│   ├── intent.py             # Intent detection logic
+│   ├── rag.py                # RAG pipeline (FAISS + embeddings)
 │
-├── data/
-│   └── knowledge_docs.md # Product info
-│
-├── requirements.txt
-└── README.md
+└── data/
+    └── product_docs.txt      # Knowledge base for RAG
+
 
 ````
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### 1️⃣ Create virtual environment
 
@@ -76,7 +76,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔐 OpenAI API Setup (Optional)
+## OpenAI API Setup (Optional)
 
 If you want **real AI responses**:
 
@@ -112,7 +112,7 @@ You: exit
 Agent: Goodbye! 👋
 ---
 
-## 🧠 Intent Handling Logic
+## Intent Handling Logic
 
 | Intent          | Action                  |
 | --------------- | ----------------------- |
@@ -122,7 +122,7 @@ Agent: Goodbye! 👋
 
 ---
 
-## 🧪 RAG Flow Explained
+##  RAG Flow Explained
 
 1. Load documents from `data/knowledge.txt`
 2. Convert text → embeddings
@@ -132,7 +132,7 @@ Agent: Goodbye! 👋
 
 ---
 
-## 🚀 Why This Design?
+##  Why This Design?
 
 * **LangGraph** enables scalable agent workflows
 * **RAG** improves factual accuracy
@@ -141,7 +141,7 @@ Agent: Goodbye! 👋
 
 ---
 
-## 📌 Notes for Reviewers
+##  Notes for Reviewers
 
 * The project is intentionally **minimal but extensible**
 * API usage is isolated for easy replacement
@@ -149,10 +149,10 @@ Agent: Goodbye! 👋
 
 ---
 
-## 🏁 Conclusion
+##  Conclusion
 
 This project demonstrates a clean, modern AI-agent architecture using industry-relevant tools. It balances clarity, modularity, and real-world applicability — suitable for internships, demos, and further extension.
 
 ---
 
-👩‍💻 **Author**: Kushala Manjunath Gowda
+ **Author**: Kushala Manjunath Gowda
