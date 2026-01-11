@@ -24,3 +24,5 @@ def build_rag_components():
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
     return retriever, llm
+
+

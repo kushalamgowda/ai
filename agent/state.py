@@ -6,3 +6,5 @@ class AgentState(TypedDict):
     name: Optional[str]
     email: Optional[str]
     platform: Optional[str]
+
+

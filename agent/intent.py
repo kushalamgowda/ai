@@ -4,3 +4,5 @@ def detect_intent(message: str) -> str:
     elif "hello" in message.lower():
         return "greeting"
     return "product_inquiry"
+
+
