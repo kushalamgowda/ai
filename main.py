@@ -1,34 +1,30 @@
+from dotenv import load_dotenv
+load_dotenv()  
 from agent.graph import build_graph
 
-graph = build_graph()
 
-state = {
-    "messages": [],
-    "intent": None,
-    "name": None,
-    "email": None,
-    "platform": None
-}
+def main():
+    graph = build_graph()
 
-print("🤖 AutoStream AI Agent (type 'exit' to quit)\n")
+    print("🤖 AutoStream AI Agent (type 'exit' to quit)")
 
-while True:
-    user_input = input("You: ")
-    if user_input.lower() == "exit":
-        break
+    state = {
+        "input": "",
+        "output": ""
+    }
 
-    # Capture structured info manually
-    if state["intent"] == "high_intent":
-        if state["name"] is None:
-            state["name"] = user_input
-        elif state["email"] is None:
-            state["email"] = user_input
-        elif state["platform"] is None:
-            state["platform"] = user_input
-        else:
-            state["messages"].append(user_input)
-    else:
-        state["messages"].append(user_input)
+    while True:
+        user_input = input("\nYou: ").strip()
 
-    state = graph.invoke(state)
-    print("Agent:", state["messages"][-1])
+        if user_input.lower() in ["exit", "quit"]:
+            print("Agent: Goodbye! 👋")
+            break
+
+        state["input"] = user_input
+        state = graph.invoke(state)
+
+        print("Agent:", state["output"])
+
+
+if __name__ == "__main__":
+    main()
